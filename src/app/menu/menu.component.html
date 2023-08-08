@@ -1,0 +1,36 @@
+<div>
+  <img src="./assets/image/menu.jpg" alt="" style="width:100%">
+</div>
+
+<hr>
+<h1 class="text-center" style="font-family: 'Romanesco', cursive; padding: 100px; color: rgb(195, 80, 195);"><span
+  class="material-symbols-outlined" style="font-size: larger;">
+  local_fire_department
+</span> Something hot. Something tasty.
+<span class="material-symbols-outlined" style="font-size: larger;">
+  sentiment_calm
+</span>
+</h1>
+<hr>
+<br>
+
+<div class="input-group mb-3" style="padding: 30px;">
+  <input type="text" class="form-control" aria-label="Text input with checkbox" [(ngModel)]="filterString" placeholder="Enter the dish to search" >
+</div>
+
+<div class="container">
+  <div class="row" >
+    <div class="col-md-6" *ngFor='let men of menu | search: filterString' style="padding:25px;">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{men._dishImage}}" alt="Card image cap" style="padding: 5px;">
+        <div class="card-body">
+          <h3 style="font-style: italic;">{{men._dishName}}</h3>
+          <p class="card-text">Genre: {{men._categoryName}}, {{men._menuName}}</p>
+          <p class="card-text">Nature: {{men._nature}}</p>
+          <p>Price: {{men._dishPrice}}/-</p>
+          <a class="btn btn-primary" (click)="sendToCart(men)">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>

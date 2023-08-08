@@ -1,0 +1,33 @@
+<h1 class="text-center" style="padding:90px">categories of the particular menu are</h1>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Category Image</th>
+        <th scope="col">Category Id</th>
+        <th scope="col">Category Name</th>
+        <th scope="col">Category Descriptions</th>
+        <th scope="col">Category Operation</th>
+        <th scope="col">Visit Dish</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let category of adminCategory'>
+        <td><img src="{{category._categoryImage}}" height="100" width="100"></td>
+          <td>{{category._categoryId}}</td>
+          <td>{{category._categoryName}}</td>
+          <td>{{category._categoryDescription}}</td>
+        <td>
+            <a role="button" class="btn btn-warning"  [routerLink]="['/categoryitems', category._categoryId]" (click)="sendCategoryId(category._categoryId)">Edit Category</a>    
+        </td>
+        <td>
+            <a class="btn btn-primary" role="button" [routerLink]="['/alldishes', category._categoryId]" (click)="sendCategoryId(category._categoryId)">Dish items</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+  <div style="padding: 20px;">
+    <a class="btn btn-success btn-block" role="button" routerLink="/Addcategory">Add New Category</a>
+  </div>
+<br>

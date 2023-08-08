@@ -1,0 +1,54 @@
+<h1 class="text-center" style="padding:50px">EDIT CATEGORY ITEMS</h1>
+
+<form>
+    <div class="form-group">
+      <label >Category Id</label>
+      
+      <input type="text" name="_categoryId" [(ngModel)] = "categoryForm._categoryId" class="form-control"  placeholder="Enter category name" id="categoryId" #categoryId="ngModel" required [ngClass]="{'is-invalid': categoryId.invalid && (categoryId.dirty || categoryId.touched)}">
+      
+      <div class="invalid-feedback" *ngIf="categoryId.invalid && (categoryId.dirty || categoryId.touched)">
+        <p style="color: red;">Required Field</p>
+      </div>
+    </div>  
+      
+    
+    
+    
+    <div class="form-group">
+      <label >Category Name</label>
+      
+      <input type="text" name="_categoryName" [(ngModel)] = "categoryForm._categoryName" class="form-control"  placeholder="Enter category name" id="categoryName" #categoryName="ngModel" required [ngClass]="{'is-invalid': categoryName.invalid && (categoryName.dirty || categoryName.touched)}">
+      
+      <div class="invalid-feedback" *ngIf="categoryName.invalid && (categoryName.dirty || categoryName.touched)">
+        <p style="color: red;">Required Field</p>
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label >category Description</label>
+        
+        <input type="text" name="_categoryDescription" [(ngModel)] = "categoryForm._categoryDescription" class="form-control"  placeholder="Enter category description" id="categoryDesc" #categoryDesc="ngModel" required [ngClass]="{'is-invalid': categoryDesc.invalid && (categoryDesc.dirty || categoryDesc.touched)}">
+
+        <div class="invalid-feedback" *ngIf="categoryDesc.invalid && (categoryDesc.dirty || categoryDesc.touched)">
+          <p style="color: red;">Required Field</p>
+        </div>
+    </div>
+    
+    
+    
+    <div class="form-group">
+        <label >category URL</label>
+        
+        <input type="text" name="_categoryImage" [(ngModel)] = "categoryForm._categoryImage" class="form-control"  placeholder="Enter category url"id="categoryURL" #categoryURL="ngModel" required [ngClass]="{'is-invalid': categoryURL.invalid && (categoryURL.dirty || categoryURL.touched)}">
+
+        <div class="invalid-feedback" *ngIf="categoryURL.invalid && (categoryURL.dirty || categoryURL.touched)">
+          <p style="color: red;">Required Field</p>
+        </div>
+    </div>
+
+
+    
+      <a (click)="update()" class="btn btn-primary" routerLink="/Admincategory">Update</a>
+  </form>

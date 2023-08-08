@@ -1,0 +1,38 @@
+<h1 class="text-center" style="padding:90px">MENU ITEMS</h1>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Menu Image</th>
+        <th scope="col">Menu Id</th>
+        <th scope="col">Menu Name</th>
+        <th scope="col">Menu Descriptions</th>
+        <th scope="col">Menu Operation</th>
+        <th scope="col">Visit Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let men of adminMenu'>
+        <td><img src="{{men._menuImage}}" height="100" width="100"></td>
+        <td>{{men._menuId}}</td>
+        <td>{{men._menuName}}</td>
+        <td>{{men._menuDescription}}</td>
+        <td>
+            <a role="button" class="btn btn-warning" [routerLink]="['/menuitems', men._menuId]" (click)="sendId(men._menuId)">Edit Menu</a>    
+        </td>
+        <td>
+            <a class="btn btn-primary" role="button" [routerLink]="['/allcategories/', men._menuId]" (click)="sendId(men._menuId)">Category</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+  <div style="padding: 10px;">
+    <a class="btn btn-success btn-block" role="button" routerLink="/Addmenu">Add New Menu</a>
+  </div>
+<br>
+
+<div style="padding: 10px;">
+  <a class="btn btn-info btn-block" role="button" routerLink="/Admindish">View all dish</a>
+</div>
+<br>

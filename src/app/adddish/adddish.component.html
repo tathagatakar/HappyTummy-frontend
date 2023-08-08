@@ -1,0 +1,59 @@
+<!-- heading for adding dish items  -->
+<h1 class="text-center" style="padding:50px">ADD NEW DISH ITEMS</h1>
+
+<!-- form of adding category items  -->
+<form>
+    <div class="form-group">
+      <label> Dish Name</label>
+      
+      <input type="text" name="_dishName" [(ngModel)] = "dishForm._dishName" class="form-control" placeholder="Enter dish name" id="dishName" #dishName="ngModel" required [ngClass]="{'is-invalid': dishName.invalid && (dishName.dirty || dishName.touched)}">
+      
+      <div class="invalid-feedback" *ngIf="dishName.invalid && (dishName.dirty || dishName.touched)">
+        <p style="color: red;">Required Field</p>
+      </div>
+    </div>
+    
+    <div class="form-group">
+        <label >Dish Price</label>
+        
+        <input type="number" name="_dishPrice" [(ngModel)] = "dishForm._dishPrice" class="form-control"  placeholder="Enter dish description" id="dishPrice" #dishPrice="ngModel" required [ngClass]="{'is-invalid': dishPrice.invalid && (dishPrice.dirty || dishPrice.touched)}">
+        
+        <div class="invalid-feedback" *ngIf="dishPrice.invalid && (dishPrice.dirty || dishPrice.touched)">
+            <p style="color: red;">Required Field</p>
+          </div>
+    </div>
+    
+    <div class="form-group">
+        <label >Dish Description</label>
+        
+        <input type="text" name="_dishDescription" [(ngModel)] = "dishForm._dishDescription" class="form-control"  placeholder="Enter dish url" id="dishDesc" #dishDesc="ngModel" required [ngClass]="{'is-invalid': dishDesc.invalid && (dishDesc.dirty || dishDesc.touched)}">
+        
+        <div class="invalid-feedback" *ngIf="dishDesc.invalid && (dishDesc.dirty || dishDesc.touched)">
+            <p style="color: red;">Required Field</p>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label >Dish URL</label>
+        
+        <input type="text" name="_dishImage" [(ngModel)] = "dishForm._dishImage" class="form-control"  placeholder="Enter dish url" id="dishImage" #dishImage="ngModel" required [ngClass]="{'is-invalid': dishImage.invalid && (dishImage.dirty || dishImage.touched)}">
+
+        <div class="invalid-feedback" *ngIf="dishImage.invalid && (dishImage.dirty || dishImage.touched)">
+            <p style="color: red;">Required Field</p>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label >Dish Nature</label>
+        <input type="text" name="_nature" [(ngModel)] = "dishForm._nature" class="form-control"  placeholder="Enter dish url" id="dishNature" #dishNature="ngModel" required [ngClass]="{'is-invalid': dishNature.invalid && (dishNature.dirty || dishNature.touched)}">
+        <div class="invalid-feedback" *ngIf="dishNature.invalid && (dishNature.dirty || dishNature.touched)">
+            <p style="color: red;">Required Field</p>
+        </div>
+    </div>
+    
+    <!-- button for routing to admindish -->
+    <div style="padding: 20px;">
+        <a (click)="create()" class="btn btn-success btn-block" routerLink="/Admindish" role="button">Add dish</a>
+    </div>
+    
+ </form>

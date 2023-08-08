@@ -1,0 +1,38 @@
+<!-- heading for adding category items  -->
+<h1 class="text-center" style="padding:50px">ADD NEW CATEGORY ITEMS</h1>
+
+<!-- form of adding category items  -->
+<form>
+    <div class="form-group">
+      <label >Category Name</label>
+      
+      <input type="text" name="_categoryName" [(ngModel)] = "categoryForm._categoryName" class="form-control"  placeholder="Enter Category name" id="categoryName" #categoryName="ngModel" required [ngClass]="{'is-invalid': categoryName.invalid && (categoryName.dirty || categoryName.touched)}">
+      
+      <div class="invalid-feedback" *ngIf="categoryName.invalid && (categoryName.dirty || categoryName.touched)">
+        <p style="color: red;">Required Field</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label >Category Description</label>
+        
+        <input type="text" name="_categoryDescription" [(ngModel)] = "categoryForm._categoryDescription" class="form-control"  placeholder="Enter Category description" id="categoryDesc" #categoryDesc="ngModel" required [ngClass]="{'is-invalid': categoryDesc.invalid && (categoryDesc.dirty || categoryDesc.touched)}">
+        
+        <div class="invalid-feedback" *ngIf="categoryDesc.invalid && (categoryDesc.dirty || categoryDesc.touched)">
+            <p style="color: red;">Required Field</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label >Category URL</label>
+        
+        <input type="text" name="_categoryImage" [(ngModel)] = "categoryForm._categoryImage" class="form-control"  placeholder="Enter Category url" id="categoryURL" #categoryURL="ngModel" required [ngClass]="{'is-invalid': categoryURL.invalid && (categoryURL.dirty || categoryURL.touched)}">
+        
+        <div class="invalid-feedback" *ngIf="categoryURL.invalid && (categoryURL.dirty || categoryURL.touched)">
+            <p style="color: red;">Required Field</p>
+          </div>
+    </div>
+
+    <!-- button to route to admin category -->
+    <a (click)="create()" class="btn btn-primary" routerLink="/Admincategory">Add category</a>
+ </form>

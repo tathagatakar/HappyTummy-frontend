@@ -1,0 +1,30 @@
+<h1 class="text-center" style="padding:90px">DISH ITEMS</h1>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Dish Image</th>
+        <th scope="col">Dish Id</th>
+        <th scope="col">Dish Name</th>
+        <th scope="col">Dish Descriptions</th>
+        <th scope="col">Dish Nature</th>
+        <th scope="col">Edit Nature</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let dish of categoryDish'>
+        <td><img src="{{dish._dishImage}}" height="100" width="100"></td>
+        <td>{{dish._dishId}}</td>
+        <td>{{dish._dishName}}</td>
+        <td>{{dish._dishDescription}}</td>
+        <td>{{dish._nature}}</td>
+        <td>
+            <a role="button" class="btn btn-warning" [routerLink]="['/dishitems', dish._dishId]" (click)="sendId(dish._dishId)">Edit Dish</a>    
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+  <div style="padding: 20px;">
+    <a class="btn btn-success btn-block" role="button" routerLink="/Adddish">Add New Dish</a>
+  </div>
+<br>

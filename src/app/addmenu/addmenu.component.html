@@ -1,0 +1,35 @@
+<!-- heading for adding menu items  -->
+<h1 class="text-center" style="padding:50px">ADD NEW MENU ITEMS</h1>
+
+<!-- form of adding menu items  -->
+<form>
+    <div class="form-group">
+      <label for="menuName" class="form-label">Menu Name</label>
+      
+      <input type="text" name="_menuName" [(ngModel)] = "menuForm._menuName"class="form-control"   placeholder="Enter menu name" id="menuName" #menuName="ngModel" required [ngClass]="{'is-invalid': menuName.invalid && (menuName.dirty || menuName.touched)}">
+      
+      <div class="invalid-feedback" *ngIf="menuName.invalid && (menuName.dirty || menuName.touched)">
+        <p style="color: red;">Required Field</p>
+      </div>
+    </div>
+    
+    <div class="form-group">
+        <label >Menu Description</label>
+        <input type="text" name="_menuDescription" [(ngModel)] = "menuForm._menuDescription" class="form-control" placeholder="Enter menu description" id="menuDesc" #menuDesc="ngModel" required [ngClass]="{'is-invalid': menuDesc.invalid && (menuDesc.dirty || menuDesc.touched)}">
+
+        <div class="invalid-feedback" *ngIf="menuDesc.invalid && (menuDesc.dirty || menuDesc.touched)">
+          <p style="color: red;">Required Field</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label >Menu URL</label>
+        <input type="text" name="_menuImage" [(ngModel)] = "menuForm._menuImage" class="form-control" class="form-control"  placeholder="Enter menu url" id="menuURL" #menuURL="ngModel" required [ngClass]="{'is-invalid': menuURL.invalid && (menuURL.dirty || menuURL.touched)}">
+        <div class="invalid-feedback" *ngIf="menuURL.invalid && (menuURL.dirty || menuURL.touched)">
+          <p style="color: red;">Required Field</p>
+        </div>
+    </div>
+
+    <!-- button for routing to adminmenu -->
+    <a (click)="create()" class="btn btn-primary" routerLink="/Adminmenu">Add menu</a>
+</form>
